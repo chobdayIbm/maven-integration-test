@@ -1,9 +1,9 @@
-package com.github.jitpack;
+package org.chobday;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -17,22 +17,16 @@ public class AppTest
     .version(HttpClient.Version.HTTP_2)
     .build();
 
-    App app = new App();
-
     @Test
-    public void testApp()
-    {
-        assertEquals("Hello world", app.greet("world"));
-    }
-
-    @Test
-    public void testTrue()
+    @DisplayName("Canary Test")
+    void testTrue()
     {
         assertTrue( true );
     }
 
     @Test
-    public void testApi()
+    @DisplayName("Test Api")
+    void testApi()
     {
         try {
             HttpRequest request = HttpRequest.newBuilder()
